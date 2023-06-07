@@ -158,7 +158,7 @@ setup(
         "pydantic==1.10.4",
         "tf2onnx==1.13.0",
         "tomlkit==0.11.6",
-        "torch>=1.13.1,<=2",
+        "torch>=1.13.1,<=2.0.1",
     ],  # Optional
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
