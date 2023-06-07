@@ -15,4 +15,4 @@ services:
       context: ./sdk
       dockerfile: Dockerfile.sdk-ci
     volumes:
-      - .:/app
+      - .:/cellulose
