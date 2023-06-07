@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  cellulose_python_sdk_local_dev:
+    image: cellulose/python_sdk/local_dev
+    build:
+      context: ./sdk
+      dockerfile: Dockerfile.sdk-local-dev
+    volumes:
+      - .:/cellulose
+      # - $HOME/.cellulose_config.toml:/root/.cellulose_config.toml
+    profiles: ["dev"]
+  cellulose_python_sdk_ci:
+    image: cellulose/python_sdk/ci
+    build:
+      context: ./sdk
+      dockerfile: Dockerfile.sdk-ci
+    volumes:
+      - .:/app

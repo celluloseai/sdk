@@ -1,0 +1,24 @@
+
+# ------------------------------ CELLULOSE CONFIGS -------------------------------
+
+# --------------------------------- EXPORT ---------------------------------
+[exports]
+batch_size = 1
+enable_export_validation = false
+enable_onnx_checks = true
+enable_onnx_export = true
+enable_torchscript_export = true
+
+# ------------------------------- BENCHMARKS ---------------------------------
+[benchmarks]
+enable_onnxruntime = true # bool flag to enable ONNXRuntime benchmarks
+enable_pytorch = true # bool flag to enable PyTorch runtime benchmarks
+num_iterations = 1000000 # number of iterations to run all benchmarks
+
+# ------------------------------- OUTPUT ------------------------------------
+# OUTPUTS - Export + benchmark output formats - stdout, csv etc.
+[outputs]
+enable_csv = true # bool flag to indicate if a CSV should be exported.
+enable_stdout = true # bool flag to enable printing to console stdout.
+
+# -------------------------------- OTHER ------------------------------------

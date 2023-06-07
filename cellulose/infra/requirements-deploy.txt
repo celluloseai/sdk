@@ -1,0 +1,3 @@
+# pip requirements for deploying Cellulose Python SDK.
+build==0.10.0
+twine==4.0.2

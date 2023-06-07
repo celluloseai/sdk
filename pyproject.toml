@@ -1,0 +1,29 @@
+[tool.black]
+line-length=79
+target-version = [
+  "py310",
+  "py311",
+]
+exclude = '''
+/(
+  \.eggs/
+  | \.git/
+  | \.tox/
+  | \.venv/
+  | _build/
+  | build/
+  | dist/
+)
+'''
+
+[tool.isort]
+profile = "black"
+skip = [".venv"]
+src_paths = ["cellulose"]
+include_trailing_comma = true
+line_length = 79
+import_heading_stdlib = "Standard imports"
+import_heading_thirdparty = "Third party imports"
+import_heading_firstparty = "Cellulose imports"
+force_alphabetical_sort_within_sections = true
+group_by_package = true
