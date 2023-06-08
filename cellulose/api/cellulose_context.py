@@ -1,6 +1,7 @@
 # Standard imports
 import logging
 from pathlib import Path
+import click
 
 # Third party imports
 from pydantic.dataclasses import dataclass
@@ -59,12 +60,14 @@ class CelluloseContext:
             **export_args,
         )
 
-        msg = "Uploading ONNX model to Cellulose dashboard..."
-        logger.info(msg)
+        click.secho(
+            "Uploading ONNX model to Cellulose dashboard...", fg="yellow"
+        )
         # Upload the ONNX model to the Cellulose dashboard.
         upload_onnx_model(
             api_key=self.api_key, onnx_file=export_output.onnx.onnx_file
         )
+        click.secho("Done!", fg="green")
 
     def benchmark(self, torch_model, input, **benchmark_args):
         """
