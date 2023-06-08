@@ -63,7 +63,6 @@ class CelluloseContext:
         click.secho(
             "Uploading ONNX model to Cellulose dashboard...", fg="yellow"
         )
-        # Upload the ONNX model to the Cellulose dashboard.
         upload_onnx_model(
             api_key=self.api_key, onnx_file=export_output.onnx.onnx_file
         )
