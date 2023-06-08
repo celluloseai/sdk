@@ -7,6 +7,15 @@ BASE_URL = "http://localhost:8000"
 def upload_onnx_model(api_key: str, onnx_file: Path) -> requests.Response:
     """
     This method uploads the ONNX model file to the Cellulose dashboard.
+
+    Params
+    ------
+    api_key: str - The API key for the Cellulose dashboard.
+    onnx_file: Path - The path to the ONNX model file.
+
+    Returns
+    -------
+    requests.Response - The response from the Cellulose dashboard.
     """
     # Upload the ONNX model to the Cellulose dashboard.
     payload = {}
