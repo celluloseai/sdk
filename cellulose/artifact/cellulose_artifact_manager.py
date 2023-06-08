@@ -88,7 +88,7 @@ class CelluloseArtifactManager:
         logger.info("Reinitialize the Cellulose context...")
         self.init()
 
-        # TODO(LEX-33): Implement proper loading of Cellulose artifact from a
+        # TODO: Implement proper loading of Cellulose artifact from a
         #               file path.
         logger.info(
             "Loading Cellulose artifact: {cellulose_artifact_path}...".format(
@@ -103,10 +103,10 @@ class CelluloseArtifactManager:
         artifact.
 
         Params
-        ------
+        -----
         file: Path - The file path to be embedded within Cellulose artifact.
         """
-        # TODO(LEX-39): Verify if .load() file path to Cellulose artifact is
+        # TODO: Verify if .load() file path to Cellulose artifact is
         # valid
         self.cellulose_artifact.file_paths.append(file)
         # Add metadata associated with it too.
