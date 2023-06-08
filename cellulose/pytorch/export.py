@@ -54,6 +54,7 @@ class PytorchExport(Export):
                 torch_model=torch_model,
                 input=input,
             )
+
         return export_output
 
     def export_torchscript(

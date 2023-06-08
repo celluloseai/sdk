@@ -10,6 +10,7 @@ from cellulose.artifact.cellulose_artifact_manager import (
     CelluloseArtifactManager,
 )
 from cellulose.configs.loader import ConfigLoader
+from cellulose.dashboard.api_resources.models.onnx import upload_onnx_model
 
 logger = logging.getLogger(__name__)
 
@@ -21,12 +22,13 @@ class CelluloseContext:
     config_loader = ConfigLoader()
     artifact_manager = CelluloseArtifactManager()
 
-    def __init__(self):
+    def __init__(self, api_key: str):
         logger.info("Initializing Cellulose context...")
         logger.info("Loading Cellulose configs...")
         self.load_config()
         logger.info("Initializing Cellulose artifact manager...")
         self.artifact_manager.init()
+        self.api_key = api_key
 
     def load_config(self):
         """
@@ -49,12 +51,19 @@ class CelluloseContext:
         the underlying export workflow. Please read our documentation for full
         details.
         """
-        torch_model.cellulose.export_model(
+        export_output = torch_model.cellulose.export_model(
             config_loader=self.config_loader,
             artifact_manager=self.artifact_manager,
             torch_model=torch_model,
             input=input,
             **export_args,
+        )
+
+        msg = "Uploading ONNX model to Cellulose dashboard..."
+        logger.info(msg)
+        # Upload the ONNX model to the Cellulose dashboard.
+        upload_onnx_model(
+            api_key=self.api_key, onnx_file=export_output.onnx.onnx_file
         )
 
     def benchmark(self, torch_model, input, **benchmark_args):
