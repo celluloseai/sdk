@@ -12,7 +12,7 @@ import tomlkit
 from pydantic.dataclasses import dataclass
 
 # Cellulose imports
-from cellulose.artifact.cellulose_artifact import CelluloseArtifact
+from cellulose.artifact.cellulose_artifact import CelluloseArtifact, Metadata
 from cellulose.configs.config import AllConfig
 from cellulose.version import CELLULOSE_SDK_VERSION
 
@@ -21,7 +21,14 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class CelluloseArtifactManager:
-    cellulose_artifact = CelluloseArtifact(file_paths=[])
+    cellulose_artifact = CelluloseArtifact(
+        file_paths=[],
+        metadata=Metadata(
+            title="",
+            created_at=datetime.utcnow(),
+            updated_at=datetime.utcnow(),
+        ),
+    )
     metadata_doc = tomlkit.document()
 
     def initialize_artifact_metadata(self):

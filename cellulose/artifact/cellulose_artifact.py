@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 @dataclass
 class Metadata:
     title: str
-    created_at: datetime = datetime.utcnow()
-    updated_at: datetime = datetime.utcnow()
+    created_at: datetime
+    updated_at: datetime
 
 
 @dataclass
@@ -21,4 +21,4 @@ class CelluloseArtifact:
     """
 
     file_paths: list[Path]
-    metadata: Metadata = Metadata(title="")
+    metadata: Metadata
