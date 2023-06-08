@@ -119,7 +119,7 @@ class CelluloseArtifactManager:
         Params
         ------
         name: str - The name of the Cellulose artifact.
-        For example, "my_benchmarks" to export a "my_benchmarks.cellulose"
+        For example, "my_benchmarks" to export a "my_benchmarks.cellulose.zip"
         target_directory: str - The target directory for where to place this
         generated ".cellulose" artifact.
         """
