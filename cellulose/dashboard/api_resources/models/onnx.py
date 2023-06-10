@@ -2,6 +2,7 @@ from pathlib import Path
 import requests
 
 BASE_URL = "http://localhost:8000"
+#  BASE_URL = "https://dashboard.cellulose.ai"
 
 
 def upload_onnx_model(api_key: str, onnx_file: Path) -> requests.Response:
@@ -29,9 +30,7 @@ def upload_onnx_model(api_key: str, onnx_file: Path) -> requests.Response:
             ),
         )
     ]
-
     headers = {
-        "Content-Type": "application/json",
         "X-API-Key": api_key,
     }
 
