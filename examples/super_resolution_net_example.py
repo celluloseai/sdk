@@ -67,10 +67,10 @@ if __name__ == "__main__":
 
     cellulose_context = CelluloseContext("YOUR_API_KEY")
 
-        torch_model=torch_model,
     cellulose_context.export(
+        torch_model=torch_model,
         input=input_tensor,
     )
 
     # This is needed to generate the Cellulose artifact.
-    cellulose_context.flush(name="benchmark", target_directory=".")
+    cellulose_context.flush(name="exported_artifacts", target_directory=".")

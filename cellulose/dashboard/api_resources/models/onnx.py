@@ -1,8 +1,12 @@
+import logging
 from pathlib import Path
 import requests
 
 BASE_URL = "http://localhost:8000"
 #  BASE_URL = "https://dashboard.cellulose.ai"
+
+
+logger = logging.getLogger(__name__)
 
 
 def upload_onnx_model(api_key: str, onnx_file: Path) -> requests.Response:
@@ -41,5 +45,5 @@ def upload_onnx_model(api_key: str, onnx_file: Path) -> requests.Response:
         data=payload,
         files=files,
     )
-    print(response.text)
+    logger.info(response.text)
     return response
