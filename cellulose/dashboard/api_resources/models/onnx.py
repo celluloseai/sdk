@@ -1,5 +1,8 @@
+# Standard imports
 import logging
 from pathlib import Path
+
+# Third party imports
 import requests
 
 BASE_URL = "http://localhost:8000"

@@ -1,9 +1,9 @@
 # Standard imports
 import logging
 from pathlib import Path
-import click
 
 # Third party imports
+import click
 from pydantic.dataclasses import dataclass
 
 # Cellulose imports
