@@ -63,9 +63,22 @@ class CelluloseContext:
         click.secho(
             "Uploading ONNX model to Cellulose dashboard...", fg="yellow"
         )
-        upload_onnx_model(
+        response = upload_onnx_model(
             api_key=self.api_key, onnx_file=export_output.onnx.onnx_file
         )
+
+        if response.status_code != 200:
+            click.secho(
+                "Failed to upload ONNX model to Cellulose dashboard",
+                fg="red",
+            )
+            click.secho("Please check your API key and try again.", fg="red")
+            click.secho(
+                "If the problem persists, please contact us at support@cellulose.ai",
+                fg="red",
+            )
+            return
+
         click.secho("Done!", fg="green")
 
     def benchmark(self, torch_model, input, **benchmark_args):
