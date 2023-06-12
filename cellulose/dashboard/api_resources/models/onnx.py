@@ -5,8 +5,7 @@ from pathlib import Path
 # Third party imports
 import requests
 
-BASE_URL = "http://localhost:8000"
-#  BASE_URL = "https://dashboard.cellulose.ai"
+BASE_URL = "https://dashboard.cellulose.ai"
 
 
 logger = logging.getLogger(__name__)
