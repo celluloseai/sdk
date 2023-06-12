@@ -1,5 +1,8 @@
 # Cellulose Python SDK
 
+[![pypi](https://img.shields.io/pypi/v/cellulose-sdk.svg)](https://pypi.org/project/cellulose-sdk)
+![pypi](https://img.shields.io/pypi/pyversions/cellulose-sdk)
+
 Welcome to Cellulose!
 We build tools designed to help ML engineers understand, fine tune and improve
 inference performance of their models.
